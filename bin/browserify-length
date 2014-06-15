@@ -1,0 +1,22 @@
+#!/usr/bin/env node
+
+var lengths = require('../');
+var style = require("style-format");
+var rightpad = require("right-pad");
+var doc = require('fs').readFileSync(process.argv[2]).toString();
+
+var output = style('    {bold}%s{reset} {grey}=>{reset} {cyan}%s {reset}(%s){reset}');
+var result = lengths(doc);
+var colsize = 0;
+
+result.forEach(function (r) {
+  if (r.name.length > colsize) colsize = r.name.length;
+});
+
+console.log('');
+
+result.forEach(function (r) {
+  console.log(output, rightpad(r.name, colsize), r.len, r.percent);
+});
+
+console.log('');

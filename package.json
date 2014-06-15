@@ -1,0 +1,25 @@
+{
+  "name": "browserify-length",
+  "version": "0.0.0",
+  "description": "Lists modules in a Browserify bundle by their length and percentage",
+  "main": "index.js",
+  "bin": {
+    "browserify-length": "./bin/browserify-length"
+  },
+  "scripts": {
+    "test": "node test"
+  },
+  "keywords": [
+    "browserify"
+  ],
+  "repository": {
+    "url": "git@github.com:azer/browserify-length.git",
+    "type": "git"
+  },
+  "author": "azer",
+  "license": "BSD",
+  "dependencies": {
+    "style-format": "0.0.0",
+    "right-pad": "0.0.0"
+  }
+}
